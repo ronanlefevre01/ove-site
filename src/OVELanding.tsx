@@ -21,7 +21,7 @@ export default function OVELanding() {
   // ✦ IMPORTANT ✦
   // On ne fetch JAMAIS par défaut pour éviter CORS/404 en prod Vercel.
   // Si (et seulement si) tu fournis VITE_API_CONTENT_BASE, on essaie de charger /site-content dessus.
-  const CONTENT_BASE = (import.meta.env?.VITE_API_CONTENT_BASE || "").trim();
+  const CONTENT_BASE = "";
 
   const defaultContent = {
     site: {
