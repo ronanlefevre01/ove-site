@@ -18,13 +18,10 @@ import {
 import { Link } from "react-router-dom";
 
 export default function OVELanding() {
-  // -------- Base API pour le contenu (évite les 404 sur Vercel) --------
-  const ABSOLUTE_CONTENT_FALLBACK = "https://opti-admin.vercel.app/api";
-  const CONTENT_BASE =
-    (import.meta.env && import.meta.env.VITE_API_CONTENT_BASE) ||
-    (typeof location !== "undefined" && location.hostname.endsWith("vercel.app")
-      ? ABSOLUTE_CONTENT_FALLBACK
-      : "/api");
+  // ✦ IMPORTANT ✦
+  // On ne fetch JAMAIS par défaut pour éviter CORS/404 en prod Vercel.
+  // Si (et seulement si) tu fournis VITE_API_CONTENT_BASE, on essaie de charger /site-content dessus.
+  const CONTENT_BASE = (import.meta.env?.VITE_API_CONTENT_BASE || "").trim();
 
   const defaultContent = {
     site: {
@@ -104,20 +101,22 @@ export default function OVELanding() {
   const [content, setContent] = React.useState<any>(defaultContent);
 
   React.useEffect(() => {
+    if (!CONTENT_BASE) return; // pas d’URL -> pas d’appel -> pas d’erreur console
     (async () => {
       try {
-        const res = await fetch(`${CONTENT_BASE}/site-content`, { cache: "no-store" });
-        if (res.ok) {
-          const txt = await res.text();
-          try {
-            const remote = txt ? JSON.parse(txt) : {};
-            setContent({ ...defaultContent, ...remote });
-          } catch {
-            // on ignore si le JSON n'est pas valide
-          }
+        const base = CONTENT_BASE.replace(/\/$/, "");
+        const res = await fetch(`${base}/site-content`, { cache: "no-store" });
+        if (!res.ok) return;
+        const txt = await res.text();
+        if (!txt) return;
+        try {
+          const remote = JSON.parse(txt);
+          setContent({ ...defaultContent, ...remote });
+        } catch {
+          // JSON invalide : on ignore
         }
       } catch {
-        // on garde le contenu par défaut si l’appel échoue
+        // réseau/CORS : on ignore
       }
     })();
   }, []); // mount only
@@ -227,10 +226,7 @@ export default function OVELanding() {
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {content.catalogue.cards?.map((c: any, idx: number) => (
-            <Card
-              key={idx}
-              className="rounded-2xl bg-white/[0.04] shadow-sm hover:shadow-md transition"
-            >
+            <Card key={idx} className="rounded-2xl bg-white/[0.04] shadow-sm hover:shadow-md transition">
               <CardHeader className="pb-0">
                 <CardTitle className="flex items-center justify-between">
                   <span>{c.label}</span>
