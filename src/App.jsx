@@ -5,19 +5,17 @@ import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
 
-// Même nom d'ENV que sur la page login
-// - en dev sans proxy: VITE_API_BASE="https://opti-admin.vercel.app/api/site-ove"
-// - en prod (sur le même domaine): fallback "/api/site-ove"
-const API_BASE = (import.meta?.env?.VITE_API_BASE || "/api/site-ove").replace(/\/$/, "");
+const ABSOLUTE_FALLBACK = "https://opti-admin.vercel.app/api/site-ove";
+const API_BASE =
+  import.meta.env?.VITE_API_AUTH_BASE ||
+  (location.hostname.endsWith("vercel.app") ? ABSOLUTE_FALLBACK : "/api/site-ove");
 
 function RequireAuth({ children }) {
   const loc = useLocation();
   const [allowed, setAllowed] = useState(null);
 
   useEffect(() => {
-    const ctrl = new AbortController();
-    let cancelled = false;
-
+    let cancel = false;
     (async () => {
       try {
         const token =
@@ -29,21 +27,16 @@ function RequireAuth({ children }) {
 
         const res = await fetch(`${API_BASE}/auth/me`, {
           credentials: "include",
-          headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-          signal: ctrl.signal,
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
 
-        if (!cancelled) setAllowed(res.ok);
+        if (!cancel) setAllowed(res.ok);
       } catch {
-        if (!cancelled) setAllowed(false);
+        if (!cancel) setAllowed(false);
       }
     })();
-
-    return () => {
-      cancelled = true;
-      ctrl.abort();
-    };
-  }, [API_BASE]); // dépend de la base API
+    return () => { cancel = true; };
+  }, []);
 
   if (allowed === null) return <div style={{ padding: 24 }}>Chargement…</div>;
   if (!allowed) {
@@ -59,17 +52,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<OVELanding />} />
         <Route path="/login" element={<LoginPage />} />
-
         <Route
           path="/compte"
           element={
             <RequireAuth>
-              {/* La même base API que celle utilisée pour /auth */}
               <AccountClientPortal apiBase={API_BASE} />
             </RequireAuth>
           }
         />
-
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

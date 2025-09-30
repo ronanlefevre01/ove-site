@@ -1,3 +1,4 @@
+// src/OVELanding.jsx
 import React from "react";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
@@ -17,6 +18,14 @@ import {
 import { Link } from "react-router-dom";
 
 export default function OVELanding() {
+  // -------- Base API pour le contenu (évite les 404 sur Vercel) --------
+  const ABSOLUTE_CONTENT_FALLBACK = "https://opti-admin.vercel.app/api";
+  const CONTENT_BASE =
+    (import.meta.env && import.meta.env.VITE_API_CONTENT_BASE) ||
+    (typeof location !== "undefined" && location.hostname.endsWith("vercel.app")
+      ? ABSOLUTE_CONTENT_FALLBACK
+      : "/api");
+
   const defaultContent = {
     site: {
       brand: "OVE Distribution",
@@ -97,14 +106,21 @@ export default function OVELanding() {
   React.useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("/api/site-content", { cache: "no-store" });
+        const res = await fetch(`${CONTENT_BASE}/site-content`, { cache: "no-store" });
         if (res.ok) {
-          const remote = await res.json();
-          setContent({ ...defaultContent, ...remote });
+          const txt = await res.text();
+          try {
+            const remote = txt ? JSON.parse(txt) : {};
+            setContent({ ...defaultContent, ...remote });
+          } catch {
+            // on ignore si le JSON n'est pas valide
+          }
         }
-      } catch {}
+      } catch {
+        // on garde le contenu par défaut si l’appel échoue
+      }
     })();
-  }, []);
+  }, []); // mount only
 
   const IconMap = { Shield, Truck, ShoppingBag, Smartphone, Stars, Layers } as const;
 

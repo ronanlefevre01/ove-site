@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-// Base API:
-// - en dev sans proxy, mets VITE_API_BASE="https://opti-admin.vercel.app/api/site-ove"
-// - avec proxy Vite, laisse vide et on utilisera "/api/site-ove"
-const RUNTIME_API_BASE =
-  (import.meta?.env?.VITE_API_BASE || "").toString().replace(/\/$/, "") || "/api/site-ove";
+// Base API: lue depuis l'env, sinon on choisit un fallback selon l'hôte
+const ABSOLUTE_FALLBACK =
+  "https://opti-admin.vercel.app/api/site-ove";
+const API_BASE =
+  import.meta.env?.VITE_API_AUTH_BASE ||
+  (location.hostname.endsWith("vercel.app") ? ABSOLUTE_FALLBACK : "/api/site-ove");
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -22,55 +23,61 @@ export default function LoginPage() {
     setBusy(true);
     setErr("");
 
+    const body = JSON.stringify({ email, password });
+
+    // petite fonction util pour parser en sécurité (HTML, empty, JSON…)
+    const safeParse = async (res) => {
+      try {
+        const text = await res.text();
+        return text ? JSON.parse(text) : {};
+      } catch {
+        return {};
+      }
+    };
+
     try {
-      // 1) LOGIN
-      const res = await fetch(`${RUNTIME_API_BASE}/auth/login`, {
+      // 1) essai avec API_BASE
+      let res = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        credentials: "include", // indispensable pour le cookie HttpOnly
-        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        credentials: "include",
+        body,
       });
 
-      // Certaines erreurs renvoient de l'HTML -> parse sécurisé
-      const raw = await res.text();
-      let data = {};
-      try { data = raw ? JSON.parse(raw) : {}; } catch { data = {}; }
+      // 2) si 404 ET qu'on était en relatif, on retente en absolu
+      if (res.status === 404 && API_BASE.startsWith("/")) {
+        res = await fetch(`${ABSOLUTE_FALLBACK}/auth/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          credentials: "include",
+          body,
+        });
+      }
 
+      const data = await safeParse(res);
       if (!res.ok) {
-        const msg =
-          data?.error ||
-          (res.status === 404 ? "endpoint_introuvable" : res.status === 401 ? "invalid_credentials" : "login_failed");
+        const msg = data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials");
         throw new Error(msg);
       }
 
-      // 2) Fallback dev : token renvoyé => on le garde (utile si cookie cross-site non posé en local)
+      // token fallback (utile si le cookie cross-site est bloqué en dev)
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
           sessionStorage.setItem("OVE_JWT", data.token);
-          localStorage.setItem("ove_jwt", data.token);
-          sessionStorage.setItem("ove_jwt", data.token);
         } catch {}
       }
 
-      // 3) Vérifie la session (/me) avant de bouger
-      const me = await fetch(`${RUNTIME_API_BASE}/auth/me`, {
+      // sanity check de session
+      const me = await fetch(`${API_BASE}/auth/me`, {
         credentials: "include",
         headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
       });
-
       if (!me.ok) throw new Error("session_non_etablie");
 
-      // 4) OK -> redirection
       navigate(next, { replace: true });
     } catch (e) {
-      const message = String(e?.message || "");
-      // Harmonise certains messages
-      if (message.includes("Failed to fetch")) setErr("endpoint_introuvable");
-      else setErr(message || "Erreur de connexion");
+      setErr(String(e?.message || "Erreur de connexion"));
     } finally {
       setBusy(false);
     }
