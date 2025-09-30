@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
-// Base API: lue depuis l'env, sinon on choisit un fallback selon l'hôte
-const ABSOLUTE_FALLBACK =
-  "https://opti-admin.vercel.app/api/site-ove";
-const API_BASE =
-  import.meta.env?.VITE_API_AUTH_BASE ||
-  (location.hostname.endsWith("vercel.app") ? ABSOLUTE_FALLBACK : "/api/site-ove");
+const API_BASE = (import.meta.env && import.meta.env.VITE_API_AUTH_BASE) || "/api/site-ove";
 
 export default function LoginPage() {
-  const navigate = useNavigate();
   const [params] = useSearchParams();
   const next = params.get("next") || "/compte";
 
@@ -22,45 +16,24 @@ export default function LoginPage() {
     e.preventDefault();
     setBusy(true);
     setErr("");
-
-    const body = JSON.stringify({ email, password });
-
-    // petite fonction util pour parser en sécurité (HTML, empty, JSON…)
-    const safeParse = async (res) => {
-      try {
-        const text = await res.text();
-        return text ? JSON.parse(text) : {};
-      } catch {
-        return {};
-      }
-    };
-
     try {
-      // 1) essai avec API_BASE
-      let res = await fetch(`${API_BASE}/auth/login`, {
+      // 1) LOGIN
+      const res = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         credentials: "include",
-        body,
+        body: JSON.stringify({ email, password }),
       });
 
-      // 2) si 404 ET qu'on était en relatif, on retente en absolu
-      if (res.status === 404 && API_BASE.startsWith("/")) {
-        res = await fetch(`${ABSOLUTE_FALLBACK}/auth/login`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          credentials: "include",
-          body,
-        });
-      }
+      const raw = await res.text();
+      let data = {};
+      try { data = raw ? JSON.parse(raw) : {}; } catch {}
 
-      const data = await safeParse(res);
       if (!res.ok) {
-        const msg = data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials");
-        throw new Error(msg);
+        throw new Error(data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials"));
       }
 
-      // token fallback (utile si le cookie cross-site est bloqué en dev)
+      // token fallback (utile en cross-site si le cookie est bloqué en dev)
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
@@ -68,14 +41,15 @@ export default function LoginPage() {
         } catch {}
       }
 
-      // sanity check de session
+      // 2) Vérifie la session pour éviter un ping-pong avec RequireAuth
       const me = await fetch(`${API_BASE}/auth/me`, {
         credentials: "include",
         headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
       });
       if (!me.ok) throw new Error("session_non_etablie");
 
-      navigate(next, { replace: true });
+      // 3) Redirection (plein rechargement pour garantir l'état)
+      window.location.assign(next);
     } catch (e) {
       setErr(String(e?.message || "Erreur de connexion"));
     } finally {

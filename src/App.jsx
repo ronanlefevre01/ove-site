@@ -5,10 +5,7 @@ import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
 
-const ABSOLUTE_FALLBACK = "https://opti-admin.vercel.app/api/site-ove";
-const API_BASE =
-  import.meta.env?.VITE_API_AUTH_BASE ||
-  (location.hostname.endsWith("vercel.app") ? ABSOLUTE_FALLBACK : "/api/site-ove");
+const API_BASE = (import.meta.env && import.meta.env.VITE_API_AUTH_BASE) || "/api/site-ove";
 
 function RequireAuth({ children }) {
   const loc = useLocation();
@@ -29,7 +26,6 @@ function RequireAuth({ children }) {
           credentials: "include",
           headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
-
         if (!cancel) setAllowed(res.ok);
       } catch {
         if (!cancel) setAllowed(false);
