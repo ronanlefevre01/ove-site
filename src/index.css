@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ============================
+   Variables de design (tokens)
+   ============================ */
+:root {
+  --ink: #0b1220;
+  --brand: #0a59ff;
+  --brand-2: #00c2a8;
+  --bg: #0b0f1a;
+  --panel: #0e1526;
+  --muted: #9fb0cc;
+
+  /* Palette OKLCH optionnelle */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --ring: oklch(0.704 0.04 256.788);
+}
+
+/* ===== Mapping portail client (variables --ove-*) =====
+   Ces variables sont lues par le composant /compte pour s’aligner
+   sur tes couleurs actuelles sans rien changer côté JS. */
+:root{
+  /* couleur de texte par défaut si non définie ailleurs */
+  --text: #fff;
+
+  /* fond & texte */
+  --ove-bg: var(--bg);
+  --ove-text: var(--text);
+
+  /* surfaces & bordures (style glass de ton site) */
+  --ove-surface: rgba(255,255,255,0.06);
+  --ove-card: rgba(255,255,255,0.10);
+  --ove-border: rgba(255,255,255,0.15);
+
+  /* accent = ta couleur de marque */
+  --ove-accent: var(--brand);
+  --ove-accent-contrast: var(--ink);
+
+  /* états */
+  --ove-success: #22c55e;
+  --ove-danger: var(--destructive);
+}
+
+/* Pleine hauteur */
+html, body, #root { height: 100%; }
+
+/* Fond global + texte + police */
+body {
+  color: #fff;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(10,89,255,.15), transparent),
+    radial-gradient(900px 400px at -10% 20%, rgba(0,194,168,.12), transparent),
+    var(--bg);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Base minimale (aucune bordure/outline globale !) ===== */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body { background: var(--bg); color: #fff; }
+}
+
+/* ---------- Layout utilitaires ---------- */
+.container {
+  width: 100%;
+  max-width: 1280px;           /* ≈ max-w-7xl */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px){
+  .container { padding-inline: 1.25rem; }
+}
+.section     { padding-block: clamp(2rem, 4vw, 4.5rem); }
+.section-sm  { padding-block: clamp(1.25rem, 3vw, 2.25rem); }
+
+/* ---------- Glass / cards (sans bordure) ---------- */
+.card {
+  background: rgba(255,255,255,0.04);
+  border: none;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.card:hover {
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 12px 28px rgba(0,0,0,.26);
+  transform: translateY(-2px);
+}
+
+/* ---------- Titres & badges ---------- */
+.h1 { font-size: clamp(2rem, 4.6vw, 3.75rem); line-height: 1.1;  font-weight: 600; }
+.h2 { font-size: clamp(1.35rem, 2.6vw, 2rem);   line-height: 1.25; font-weight: 600; }
+.kicker { font-size: .8rem; letter-spacing: .02em; color: var(--muted); }
+
+/* ---------- Hero right frame (sans bordure) ---------- */
+.heroFrame {
+  border-radius: 1.25rem;
+  padding: 6px;
+  background: linear-gradient(180deg, #0a59ff33, #00c2a822);
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06); /* optionnel discret */
+}
+.heroGrid > div {
+  height: 110px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+}
+
+/* ---------- Séparateur doux (pas de border) ---------- */
+.separator {
+  height: 1px;
+  width: 100%;
+  background: rgba(255,255,255,0.10);
+}
+
+/* ---------- Bouton “ghost/secondary” harmonisé ---------- */
+.btn-ghost {
+  background: rgba(255,255,255,0.08);
+  border: none;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.12); }

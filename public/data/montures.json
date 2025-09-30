@@ -1,0 +1,2302 @@
+[
+  {
+    "id": "gr001-c1",
+    "model_name": "GR001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR GUN",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230693.0,
+    "title": "Mirage GR001 NOIR GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584433/GR001-C1_msgqv5.png"
+    ]
+  },
+  {
+    "id": "gr001-c2",
+    "model_name": "GR001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "GRIS OR",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230686.0,
+    "title": "Mirage GR001 GRIS OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584434/GR001-C2_jqoqwm.png"
+    ]
+  },
+  {
+    "id": "gr002-c2",
+    "model_name": "GR002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "GRIS OR",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230679.0,
+    "title": "Mirage GR002 GRIS OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584434/GR002-C2_rtpv8v.png"
+    ]
+  },
+  {
+    "id": "gr002-c3",
+    "model_name": "GR002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "ECAILLE BLEU ARGENT",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230662.0,
+    "title": "Mirage GR002 ECAILLE BLEU ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584435/GR002-C3_qagxzc.png"
+    ]
+  },
+  {
+    "id": "gr002-c4",
+    "model_name": "GR002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "ECAILLE BRUN",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230655.0,
+    "title": "Mirage GR002 ECAILLE BRUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584435/GR002-C4_ndxb4x.png"
+    ]
+  },
+  {
+    "id": "gr003-c3",
+    "model_name": "GR003",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "ECAILLE BLEU ARGENT",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230648.0,
+    "title": "Mirage GR003 ECAILLE BLEU ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584436/GR003-C3_zctkhn.png"
+    ]
+  },
+  {
+    "id": "gr003-c4",
+    "model_name": "GR003",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "ECAILLE BRUN OR",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230631.0,
+    "title": "Mirage GR003 ECAILLE BRUN OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584436/GR003-C4_xnajys.png"
+    ]
+  },
+  {
+    "id": "gr004-c1",
+    "model_name": "GR004",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 57,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230624.0,
+    "title": "Mirage GR004 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584437/GR004-C1_hpgxi4.png"
+    ]
+  },
+  {
+    "id": "gr004-c4",
+    "model_name": "GR004",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "GRIS",
+    "size_a": 57,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230617.0,
+    "title": "Mirage GR004 GRIS",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584437/GR004-C4_woujbl.png"
+    ]
+  },
+  {
+    "id": "gr005-c1",
+    "model_name": "GR005",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 55,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230600.0,
+    "title": "Mirage GR005 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584438/GR005-C1_v7yfxk.png"
+    ]
+  },
+  {
+    "id": "gr005-c2",
+    "model_name": "GR005",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "BLEU FONCEE",
+    "size_a": 55,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230594.0,
+    "title": "Mirage GR005 BLEU FONCEE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584438/GR005-C2_kf9pqz.png"
+    ]
+  },
+  {
+    "id": "gr006-c1",
+    "model_name": "GR006",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "BLEU FONCEE",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230587.0,
+    "title": "Mirage GR006 BLEU FONCEE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584439/GR006-C1_wsmdyz.png"
+    ]
+  },
+  {
+    "id": "gr006-c2",
+    "model_name": "GR006",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "ARGENT",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230570.0,
+    "title": "Mirage GR006 ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584440/GR006-C2_cjc6sw.png"
+    ]
+  },
+  {
+    "id": "gr006-c3",
+    "model_name": "GR006",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "OR",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230563.0,
+    "title": "Mirage GR006 OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584440/GR006-C3_etzj0r.png"
+    ]
+  },
+  {
+    "id": "gr007-c3",
+    "model_name": "GR007",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "GUN",
+    "size_a": 53,
+    "size_d": 15,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230556.0,
+    "title": "Mirage GR007 GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584441/GR007-C3_h92orb.png"
+    ]
+  },
+  {
+    "id": "gr007-c4",
+    "model_name": "GR007",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "BLEU",
+    "size_a": 53,
+    "size_d": 15,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230549.0,
+    "title": "Mirage GR007 BLEU",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584442/GR007-C4_ip76w0.png"
+    ]
+  },
+  {
+    "id": "gr008-c2",
+    "model_name": "GR008",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "GUN",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230532.0,
+    "title": "Mirage GR008 GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584442/GR008-C2_imupv8.png"
+    ]
+  },
+  {
+    "id": "gr008-c3",
+    "model_name": "GR008",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "OR VERT",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230525.0,
+    "title": "Mirage GR008 OR VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584443/GR008-C3_uy688w.png"
+    ]
+  },
+  {
+    "id": "gr009-c1",
+    "model_name": "GR009",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 53,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230518.0,
+    "title": "Mirage GR009 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584444/GR009-C1_qxdzyo.png"
+    ]
+  },
+  {
+    "id": "gr009-c4",
+    "model_name": "GR009",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "BRONZE",
+    "size_a": 53,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230501.0,
+    "title": "Mirage GR009 BRONZE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584444/GR009-C4_agv1j2.png"
+    ]
+  },
+  {
+    "id": "gr010-c1",
+    "model_name": "GR010",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230495.0,
+    "title": "Mirage GR010 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584444/GR010-C1_zsrum7.png"
+    ]
+  },
+  {
+    "id": "gr010-c4",
+    "model_name": "GR010",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "GUN",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230488.0,
+    "title": "Mirage GR010 GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584445/GR010-C4_kyhz5g.png"
+    ]
+  },
+  {
+    "id": "gr011-c1",
+    "model_name": "GR011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 51,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230471.0,
+    "title": "Mirage GR011 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584446/GR011-C1_z1l1bg.png"
+    ]
+  },
+  {
+    "id": "gr011-c2",
+    "model_name": "GR011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "GUN",
+    "size_a": 51,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230464.0,
+    "title": "Mirage GR011 GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584447/GR011-C2_gx0cip.png"
+    ]
+  },
+  {
+    "id": "gr011-c3",
+    "model_name": "GR011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "OR",
+    "size_a": 51,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230457.0,
+    "title": "Mirage GR011 OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584447/GR011-C3_cy468v.png"
+    ]
+  },
+  {
+    "id": "gr011-c4",
+    "model_name": "GR011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "BRONZE",
+    "size_a": 51,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230440.0,
+    "title": "Mirage GR011 BRONZE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584448/GR011-C4_qnzhnz.png"
+    ]
+  },
+  {
+    "id": "gr012-c1",
+    "model_name": "GR012",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR ORANGE",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230433.0,
+    "title": "Mirage GR012 NOIR ORANGE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584449/GR012-C1_iwwrsi.png"
+    ]
+  },
+  {
+    "id": "gr013-c1",
+    "model_name": "GR013",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR FUCHSIA",
+    "size_a": 51,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230426.0,
+    "title": "Mirage GR013 NOIR FUCHSIA",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584450/GR013-C1_r4fh6g.png"
+    ]
+  },
+  {
+    "id": "gr014-c1",
+    "model_name": "GR014",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230419.0,
+    "title": "Mirage GR014 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584451/GR014-C1_hbpmqe.png"
+    ]
+  },
+  {
+    "id": "gr014-c4",
+    "model_name": "GR014",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "GRIS",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230402.0,
+    "title": "Mirage GR014 GRIS",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584451/GR014-C4_lb8twa.png"
+    ]
+  },
+  {
+    "id": "gr015-c1",
+    "model_name": "GR015",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR BRONZE",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230396.0,
+    "title": "Mirage GR015 NOIR BRONZE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584452/GR015-C1_ykulus.png"
+    ]
+  },
+  {
+    "id": "gr016-c1",
+    "model_name": "GR016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "CAFFE ORANGE",
+    "size_a": 51,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230907.0,
+    "title": "Mirage GR016 CAFFE ORANGE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584453/GR016-C1_afsvm0.png"
+    ]
+  },
+  {
+    "id": "gr016-c2",
+    "model_name": "GR016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "VERT",
+    "size_a": 51,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230891.0,
+    "title": "Mirage GR016 VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584454/GR016-C2_ym8ygd.png"
+    ]
+  },
+  {
+    "id": "gr016-c3",
+    "model_name": "GR016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "NOIR GUN",
+    "size_a": 51,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230884.0,
+    "title": "Mirage GR016 NOIR GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584454/GR016-C3_wm7e36.png"
+    ]
+  },
+  {
+    "id": "gr016-c4",
+    "model_name": "GR016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "NOIR OR",
+    "size_a": 51,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230877.0,
+    "title": "Mirage GR016 NOIR OR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584455/GR016-C4_v10xin.png"
+    ]
+  },
+  {
+    "id": "gr016-c5",
+    "model_name": "GR016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C5",
+    "color_label": "BLEU",
+    "size_a": 51,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode":3760388230914.0,
+    "title": "Mirage GR016 BLEU",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584456/GR016-C5_xx2rim.png"
+    ]
+  },
+  {
+    "id": "gr017-c1",
+    "model_name": "GR017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 51,
+    "size_d": 22,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230860.0,
+    "title": "Mirage GR017 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584457/GR017-C1_ecofws.png"
+    ]
+  },
+  {
+    "id": "gr017-c2",
+    "model_name": "GR017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "CRISTAL",
+    "size_a": 51,
+    "size_d": 22,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230853.0,
+    "title": "Mirage GR017 CRISTAL",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584457/GR017-C2_pjgenj.png"
+    ]
+  },
+  {
+    "id": "gr017-c4",
+    "model_name": "GR017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "CRISTAL GRIS",
+    "size_a": 51,
+    "size_d": 22,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230846.0,
+    "title": "Mirage GR017 CRISTAL GRIS",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584458/GR017-C4_u6r1al.png"
+    ]
+  },
+  {
+    "id": "gr017-c6",
+    "model_name": "GR017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C6",
+    "color_label": "SAPPHIRE",
+    "size_a": 51,
+    "size_d": 22,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230839.0,
+    "title": "Mirage GR017 SAPPHIRE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584459/GR017-C6_k8nilu.png"
+    ]
+  },
+  {
+    "id": "grc01-c1",
+    "model_name": "GRC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "Noir-orange",
+    "size_a": 56,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231034.0,
+    "title": "Mirage GRC01 Noir-orange",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584460/GRC01-C1_eu6qhj.jpg"
+    ]
+  },
+  {
+    "id": "grc01-c3",
+    "model_name": "GRC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "Bronze-jaune",
+    "size_a": 56,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231027.0,
+    "title": "Mirage GRC01 Bronze-jaune",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584460/GRC01-C3_mvyvha.jpg"
+    ]
+  },
+  {
+    "id": "grc01-c4",
+    "model_name": "GRC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "Bleu-bleu",
+    "size_a": 56,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231010.0,
+    "title": "Mirage GRC01 Bleu-bleu",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584461/GRC01-C4_h1rjyo.jpg"
+    ]
+  },
+  {
+    "id": "grc01-c5",
+    "model_name": "GRC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C5",
+    "color_label": "Gris-kaki",
+    "size_a": 56,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231003.0,
+    "title": "Mirage GRC01 Gris-kaki",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584462/GRC01-C5_rstfqp.jpg"
+    ]
+  },
+  {
+    "id": "grc02-c1",
+    "model_name": "GRC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "Noir-vert",
+    "size_a": 55,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230990.0,
+    "title": "Mirage GRC02 Noir-vert",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584463/GRC02-C1_zopya8.jpg"
+    ]
+  },
+  {
+    "id": "grc02-c2",
+    "model_name": "GRC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "Anthracite-jaune",
+    "size_a": 55,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230983.0,
+    "title": "Mirage GRC02 Anthracite-jaune",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584463/GRC02-C2_jhmysn.jpg"
+    ]
+  },
+  {
+    "id": "grc02-c3",
+    "model_name": "GRC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "Bronze-corail",
+    "size_a": 55,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230976.0,
+    "title": "Mirage GRC02 Bronze-corail",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584464/GRC02-C3_ekrtws.jpg"
+    ]
+  },
+  {
+    "id": "grc02-c4",
+    "model_name": "GRC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "Bleu-gris",
+    "size_a": 55,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230969.0,
+    "title": "Mirage GRC02 Bleu-gris",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584465/GRC02-C4_r6tkap.jpg"
+    ]
+  },
+  {
+    "id": "grc03-c1",
+    "model_name": "GRC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C1",
+    "color_label": "Noir-kaki",
+    "size_a": 56,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230952.0,
+    "title": "Mirage GRC03 Noir-kaki",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584466/GRC03-C1_anjkpn.jpg"
+    ]
+  },
+  {
+    "id": "grc03-c2",
+    "model_name": "GRC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C2",
+    "color_label": "Gun-noir",
+    "size_a": 56,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230945.0,
+    "title": "Mirage GRC03 Gun-noir",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584467/GRC03-C2_tdzfhu.jpg"
+    ]
+  },
+  {
+    "id": "grc03-c3",
+    "model_name": "GRC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C3",
+    "color_label": "Bronze-bleu canard",
+    "size_a": 56,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230938.0,
+    "title": "Mirage GRC03 Bronze-bleu canard",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584467/GRC03-C3_dkskx3.jpg"
+    ]
+  },
+  {
+    "id": "grc03-c4",
+    "model_name": "GRC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Homme",
+    "category_label": "Homme",
+    "color_code": "C4",
+    "color_label": "Bleu-gris jaune",
+    "size_a": 56,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230921.0,
+    "title": "Mirage GRC03 Bleu-gris jaune",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584469/GRC03-C4_jzz04b.jpg"
+    ]
+  },
+  {
+    "id": "mc001-c1",
+    "model_name": "MC001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230389.0,
+    "title": "Mirage MC001 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC001-C1_wo7jsj.png"
+    ]
+  },
+  {
+    "id": "mc001-c2",
+    "model_name": "MC001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "VERT",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230372.0,
+    "title": "Mirage MC001 VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC001-C2_nptslg.png"
+    ]
+  },
+  {
+    "id": "mc001-c3",
+    "model_name": "MC001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "MARBRE NOIR",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230365.0,
+    "title": "Mirage MC001 MARBRE NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC001-C3_byzcfk.png"
+    ]
+  },
+  {
+    "id": "mc001-c4",
+    "model_name": "MC001",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "ECAILLE BLANC",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230358.0,
+    "title": "Mirage MC001 ECAILLE BLANC",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC001-C4_l9ykva.png"
+    ]
+  },
+  {
+    "id": "mc002-c1",
+    "model_name": "MC002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR DOREE",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230341.0,
+    "title": "Mirage MC002 NOIR DOREE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC002-C1_lnrugt.png"
+    ]
+  },
+  {
+    "id": "mc002-c3",
+    "model_name": "MC002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ECAILLE DOREE",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230334.0,
+    "title": "Mirage MC002 ECAILLE DOREE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584293/MC002-C3_q54wjr.png"
+    ]
+  },
+  {
+    "id": "mc002-c4",
+    "model_name": "MC002",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "ECAILLE BRONZE",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230327.0,
+    "title": "Mirage MC002 ECAILLE BRONZE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584294/MC002-C4_dwsizc.png"
+    ]
+  },
+  {
+    "id": "mc003-c1",
+    "model_name": "MC003",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "BLEU ROSE",
+    "size_a": 52,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230310.0,
+    "title": "Mirage MC003 BLEU ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584294/MC003-C1_chddra.png"
+    ]
+  },
+  {
+    "id": "mc003-c3",
+    "model_name": "MC003",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "NOIR VERT PAILLETEE",
+    "size_a": 52,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230303.0,
+    "title": "Mirage MC003 NOIR VERT PAILLETEE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584294/MC003-C3_urqtnt.png"
+    ]
+  },
+  {
+    "id": "mc004-c1",
+    "model_name": "MC004",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR OR BLANC",
+    "size_a": 53,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230297.0,
+    "title": "Mirage MC004 NOIR OR BLANC",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584294/MC004-C1_ilq8x2.png"
+    ]
+  },
+  {
+    "id": "mc004-c4",
+    "model_name": "MC004",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "BRONZE MARBRE KAKI",
+    "size_a": 53,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230280.0,
+    "title": "Mirage MC004 BRONZE MARBRE KAKI",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584295/MC004-C4_rxufsm.png"
+    ]
+  },
+  {
+    "id": "mc005-c2",
+    "model_name": "MC005",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "ARGENT",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230273.0,
+    "title": "Mirage MC005 ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584296/MC005-C2_fdy4vs.png"
+    ]
+  },
+  {
+    "id": "mc005-c3",
+    "model_name": "MC005",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "OR ROSE",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230266.0,
+    "title": "Mirage MC005 OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584296/MC005-C3_tjntuc.png"
+    ]
+  },
+  {
+    "id": "mc006-c1",
+    "model_name": "MC006",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "ARGENT",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230259.0,
+    "title": "Mirage MC006 ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584296/MC006-C1_v4r5ck.png"
+    ]
+  },
+  {
+    "id": "mc006-c4",
+    "model_name": "MC006",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "OR ROSE",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230242.0,
+    "title": "Mirage MC006 OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584296/MC006-C4_wiljvg.png"
+    ]
+  },
+  {
+    "id": "mc007-c3",
+    "model_name": "MC007",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "OR BLANC VERT",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230235.0,
+    "title": "Mirage MC007 OR BLANC VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584297/MC007-C3_liimos.png"
+    ]
+  },
+  {
+    "id": "mc007-c4",
+    "model_name": "MC007",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "OR ROSE MARRON",
+    "size_a": 52,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230228.0,
+    "title": "Mirage MC007 OR ROSE MARRON",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584297/MC007-C4_a8kfh4.png"
+    ]
+  },
+  {
+    "id": "mc008-c1",
+    "model_name": "MC008",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "DOREE NOIR",
+    "size_a": 53,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230211.0,
+    "title": "Mirage MC008 DOREE NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584297/MC008-C1_qewysl.png"
+    ]
+  },
+  {
+    "id": "mc008-c3",
+    "model_name": "MC008",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "OR ROSE VERT",
+    "size_a": 53,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230204.0,
+    "title": "Mirage MC008 OR ROSE VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584298/MC008-C3_cq0r9m.png"
+    ]
+  },
+  {
+    "id": "mc008-c4",
+    "model_name": "MC008",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "OR BLANC MARRON",
+    "size_a": 53,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230198.0,
+    "title": "Mirage MC008 OR BLANC MARRON",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584299/MC008-C4_shxeem.png"
+    ]
+  },
+  {
+    "id": "mc010-c2",
+    "model_name": "MC010",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "OR BLANC",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230181.0,
+    "title": "Mirage MC010 OR BLANC",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584299/MC010-C2_p0w6qq.png"
+    ]
+  },
+  {
+    "id": "mc010-c4",
+    "model_name": "MC010",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "OR ROSE",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230174.0,
+    "title": "Mirage MC010 OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584299/MC010-C4_sczfre.png"
+    ]
+  },
+  {
+    "id": "mc011-c1",
+    "model_name": "MC011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "OR ROSE",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230167.0,
+    "title": "Mirage MC011 OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584300/MC011-C1_xny0yx.png"
+    ]
+  },
+  {
+    "id": "mc011-c3",
+    "model_name": "MC011",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ROSE",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230150.0,
+    "title": "Mirage MC011 ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584300/MC011-C3_huyoyj.png"
+    ]
+  },
+  {
+    "id": "mc012-c1",
+    "model_name": "MC012",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR DOREE",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230143.0,
+    "title": "Mirage MC012 NOIR DOREE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584301/MC012-C1_gnf1ch.png"
+    ]
+  },
+  {
+    "id": "mc012-c2",
+    "model_name": "MC012",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "NOIR ARGENT",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230136.0,
+    "title": "Mirage MC012 NOIR ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584301/MC012-C2_cdnazb.png"
+    ]
+  },
+  {
+    "id": "mc012-c3",
+    "model_name": "MC012",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "NOIR OR ROSE",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230129.0,
+    "title": "Mirage MC012 NOIR OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584302/MC012-C3_fldlip.png"
+    ]
+  },
+  {
+    "id": "mc012-c4",
+    "model_name": "MC012",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "BRONZE OR BLANC",
+    "size_a": 52,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230112.0,
+    "title": "Mirage MC012 BRONZE OR BLANC",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584302/MC012-C4_jah9xd.png"
+    ]
+  },
+  {
+    "id": "mc013-c3",
+    "model_name": "MC013",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "FUCHSIA OR ROSE",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230105.0,
+    "title": "Mirage MC013 FUCHSIA OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584303/MC013-C3_lzxjy0.png"
+    ]
+  },
+  {
+    "id": "mc013-c4",
+    "model_name": "MC013",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "MARRON OR BLANC",
+    "size_a": 54,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230099.0,
+    "title": "Mirage MC013 MARRON OR BLANC",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584303/MC013-C4_gccrws.png"
+    ]
+  },
+  {
+    "id": "mc014-c3",
+    "model_name": "MC014",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ROUGE OR ROSE",
+    "size_a": 54,
+    "size_d": 16,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230082.0,
+    "title": "Mirage MC014 ROUGE OR ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584304/MC014-C3_y23vfs.png"
+    ]
+  },
+  {
+    "id": "mc015-c1",
+    "model_name": "MC015",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR ARGENT",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230075.0,
+    "title": "Mirage MC015 NOIR ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584305/MC015-C1_qouz9h.png"
+    ]
+  },
+  {
+    "id": "mc015-c2",
+    "model_name": "MC015",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "NOIR GUN",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230068.0,
+    "title": "Mirage MC015 NOIR GUN",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584306/MC015-C2_kmbwro.png"
+    ]
+  },
+  {
+    "id": "mc015-c4",
+    "model_name": "MC015",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "BLEU ARGENT",
+    "size_a": 54,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230051.0,
+    "title": "Mirage MC015 BLEU ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584306/MC015-C4_vcfp4n.png"
+    ]
+  },
+  {
+    "id": "mc016-c4",
+    "model_name": "MC016",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "VIOLET ARGENT",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230044.0,
+    "title": "Mirage MC016 VIOLET ARGENT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584306/MC016-C4_nzx81p.png"
+    ]
+  },
+  {
+    "id": "mc017-c3",
+    "model_name": "MC017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "NOIR ECAILLE",
+    "size_a": 48,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230037.0,
+    "title": "Mirage MC017 NOIR ECAILLE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584306/MC017-C3_gnz3zg.png"
+    ]
+  },
+  {
+    "id": "mc017-c4",
+    "model_name": "MC017",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "BRIQUE",
+    "size_a": 48,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230020.0,
+    "title": "Mirage MC017 BRIQUE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584307/MC017-C4_t0epxn.png"
+    ]
+  },
+  {
+    "id": "mc018-c1",
+    "model_name": "MC018",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 50,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230013.0,
+    "title": "Mirage MC018 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584307/MC018-C1_ckbckj.png"
+    ]
+  },
+  {
+    "id": "mc018-c3",
+    "model_name": "MC018",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "BRIQUE",
+    "size_a": 50,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230006.0,
+    "title": "Mirage MC018 BRIQUE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584308/MC018-C3_c5vthz.png"
+    ]
+  },
+  {
+    "id": "mc019-c1",
+    "model_name": "MC019",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "ECAILLE BLEU",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230822.0,
+    "title": "Mirage MC019 ECAILLE BLEU",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584309/MC019-C1_ocuqy2.png"
+    ]
+  },
+  {
+    "id": "mc019-c2",
+    "model_name": "MC019",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "NOIR",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230815.0,
+    "title": "Mirage MC019 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584310/MC019-C2_tpbeqa.png"
+    ]
+  },
+  {
+    "id": "mc019-c3",
+    "model_name": "MC019",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ECAILLE ROSE",
+    "size_a": 54,
+    "size_d": 18,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230808.0,
+    "title": "Mirage MC019 ECAILLE ROSE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584310/MC019-C3_sj5mcn.png"
+    ]
+  },
+  {
+    "id": "mc020-c1",
+    "model_name": "MC020",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "FUSCHIA",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230792.0,
+    "title": "Mirage MC020 FUSCHIA",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584311/MC020-C1_tqybj0.png"
+    ]
+  },
+  {
+    "id": "mc020-c2",
+    "model_name": "MC020",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "ECAILLE MARRON",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230785.0,
+    "title": "Mirage MC020 ECAILLE MARRON",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584311/MC020-C2_xzdbri.png"
+    ]
+  },
+  {
+    "id": "mc020-c3",
+    "model_name": "MC020",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ECAILLE BEIGE",
+    "size_a": 53,
+    "size_d": 17,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230778.0,
+    "title": "Mirage MC020 ECAILLE BEIGE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584312/MC020-C3_tqmi1h.png"
+    ]
+  },
+  {
+    "id": "mc020-c4",
+    "model_name": "MC020",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "NOIR",
+    "size_a": 53,
+    "size_d": 14,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230761.0,
+    "title": "Mirage MC020 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584312/MC020-C4_x0o96w.png"
+    ]
+  },
+  {
+    "id": "mc021-c1",
+    "model_name": "MC021",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "NOIR",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230754.0,
+    "title": "Mirage MC021 NOIR",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584313/MC021-C1_cqfp2h.png"
+    ]
+  },
+  {
+    "id": "mc021-c2",
+    "model_name": "MC021",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "GRIS",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230747.0,
+    "title": "Mirage MC021 GRIS",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584314/MC021-C2_ck6oo4.png"
+    ]
+  },
+  {
+    "id": "mc021-c3",
+    "model_name": "MC021",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "ROUGE",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230730.0,
+    "title": "Mirage MC021 ROUGE",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584316/MC021-C3_swohdr.png"
+    ]
+  },
+  {
+    "id": "mc021-c4",
+    "model_name": "MC021",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "VERT",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230723.0,
+    "title": "Mirage MC021 VERT",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584315/MC021-C4_ljstit.png"
+    ]
+  },
+  {
+    "id": "mc021-c5",
+    "model_name": "MC021",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C5",
+    "color_label": "MARRON",
+    "size_a": 51,
+    "size_d": 19,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388230716.0,
+    "title": "Mirage MC021 MARRON",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584315/MC021-C5_nc3plj.png"
+    ]
+  },
+  {
+    "id": "mcc01-c1",
+    "model_name": "MCC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "Noir-bleu elec",
+    "size_a": 47,
+    "size_d": 23,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231157.0,
+    "title": "Mirage MCC01 Noir-bleu elec",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584315/MCC01-C1_kzajge.jpg"
+    ]
+  },
+  {
+    "id": "mcc01-c2",
+    "model_name": "MCC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "Ecaille-brun",
+    "size_a": 47,
+    "size_d": 23,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231140.0,
+    "title": "Mirage MCC01 Ecaille-brun",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584316/MCC01-C2_jofkzd.jpg"
+    ]
+  },
+  {
+    "id": "mcc01-c4",
+    "model_name": "MCC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "Ecaille-jaune",
+    "size_a": 47,
+    "size_d": 23,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231133.0,
+    "title": "Mirage MCC01 Ecaille-jaune",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584318/MCC01-C4_sxrekh.jpg"
+    ]
+  },
+  {
+    "id": "mcc01-c5",
+    "model_name": "MCC01",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C5",
+    "color_label": "Ecaille-noir",
+    "size_a": 47,
+    "size_d": 23,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231126.0,
+    "title": "Mirage MCC01 Ecaille-noir",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584318/MCC01-C5_a2awrq.jpg"
+    ]
+  },
+  {
+    "id": "mcc02-c1",
+    "model_name": "MCC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "Noir-violet",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231119.0,
+    "title": "Mirage MCC02 Noir-violet",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584318/MCC02-C1_byo3pg.jpg"
+    ]
+  },
+  {
+    "id": "mcc02-c2",
+    "model_name": "MCC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "Ecaille foncé-bleu canard",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231102.0,
+    "title": "Mirage MCC02 Ecaille foncé-bleu canard",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584319/MCC02-C2_wlkzpk.jpg"
+    ]
+  },
+  {
+    "id": "mcc02-c3",
+    "model_name": "MCC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "Ecaille clair-pistache",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231096.0,
+    "title": "Mirage MCC02 Ecaille clair-pistache",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584320/MCC02-C3_b9ysif.jpg"
+    ]
+  },
+  {
+    "id": "mcc02-c4",
+    "model_name": "MCC02",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C4",
+    "color_label": "Vert-gun",
+    "size_a": 50,
+    "size_d": 20,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231089.0,
+    "title": "Mirage MCC02 Vert-gun",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584320/MCC02-C4_wsbrgv.jpg"
+    ]
+  },
+  {
+    "id": "mcc03-c1",
+    "model_name": "MCC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C1",
+    "color_label": "Noir-pistache",
+    "size_a": 49,
+    "size_d": 21,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231072.0,
+    "title": "Mirage MCC03 Noir-pistache",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584321/MCC03-C1_cdyior.jpg"
+    ]
+  },
+  {
+    "id": "mcc03-c2",
+    "model_name": "MCC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C2",
+    "color_label": "Ecaille-orange",
+    "size_a": 49,
+    "size_d": 21,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231065.0,
+    "title": "Mirage MCC03 Ecaille-orange",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584321/MCC03-C2_yuv89f.jpg"
+    ]
+  },
+  {
+    "id": "mcc03-c3",
+    "model_name": "MCC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C3",
+    "color_label": "Ecaille clair-bleu elec",
+    "size_a": 49,
+    "size_d": 21,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231058.0,
+    "title": "Mirage MCC03 Ecaille clair-bleu elec",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584322/MCC03-C3_yqjwch.jpg"
+    ]
+  },
+  {
+    "id": "mcc03-c5",
+    "model_name": "MCC03",
+    "brand_slug": "mirage",
+    "brand_label": "Mirage",
+    "category_slug": "Femme",
+    "category_label": "Femme",
+    "color_code": "C5",
+    "color_label": "Violet-or",
+    "size_a": 49,
+    "size_d": 21,
+    "material": null,
+    "price_ht": 39,
+    "price_ttc": 46.8,
+    "barcode": 3760388231041.0,
+    "title": "Mirage MCC03 Violet-or",
+    "images": [
+      "https://res.cloudinary.com/dl7gfxvsx/image/upload/v1757584322/MCC03-C4_mkboyh.jpg"
+    ]
+  }
+]
