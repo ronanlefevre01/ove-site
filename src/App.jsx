@@ -1,10 +1,46 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// src/App.jsx
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
-import RequireAuth from "./RequireAuth";
 import { API_BASE } from "./config";
+
+function RequireAuth({ children }) {
+  const loc = useLocation();
+  const [allowed, setAllowed] = useState(null);
+
+  useEffect(() => {
+    let cancel = false;
+    (async () => {
+      try {
+        const token =
+          localStorage.getItem("OVE_JWT") ||
+          sessionStorage.getItem("OVE_JWT") ||
+          localStorage.getItem("ove_jwt") ||
+          sessionStorage.getItem("ove_jwt") ||
+          "";
+
+        const res = await fetch(`${API_BASE}/auth/me`, {
+          credentials: "include",
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
+
+        if (!cancel) setAllowed(res.ok);
+      } catch {
+        if (!cancel) setAllowed(false);
+      }
+    })();
+    return () => { cancel = true; };
+  }, []);
+
+  if (allowed === null) return <div style={{ padding: 24 }}>Chargement…</div>;
+  if (!allowed) {
+    const next = encodeURIComponent(loc.pathname + loc.search);
+    return <Navigate to={`/login?next=${next}`} replace />;
+  }
+  return children;
+}
 
 export default function App() {
   return (
@@ -16,7 +52,6 @@ export default function App() {
           path="/compte"
           element={
             <RequireAuth>
-              {/* IMPORTANT: on passe bien la même base API partout */}
               <AccountClientPortal apiBase={API_BASE} />
             </RequireAuth>
           }

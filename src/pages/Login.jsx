@@ -1,3 +1,4 @@
+// src/pages/login.jsx
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { API_BASE } from "../config";
@@ -34,7 +35,6 @@ export default function LoginPage() {
         throw new Error(data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials"));
       }
 
-      // Stocke le token (fallback cross-site)
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
@@ -42,7 +42,18 @@ export default function LoginPage() {
         } catch {}
       }
 
-      // Redirection immédiate (on ne ping plus /auth/me ici)
+      // Vérifie /me (même base !)
+      const me = await fetch(`${API_BASE}/auth/me`, {
+        credentials: "include",
+        headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
+      });
+
+      if (!me.ok && data?.token) {
+        window.location.assign(next);
+        return;
+      }
+      if (!me.ok) throw new Error("session_non_etablie");
+
       window.location.assign(next);
     } catch (e) {
       setErr(String(e?.message || "Erreur de connexion"));
@@ -57,8 +68,10 @@ export default function LoginPage() {
         <h1 style={{ margin: 0 }}>Connexion</h1>
         <p style={{ color: "#667085", marginTop: -6 }}>Accédez à votre espace client.</p>
 
-        <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} style={input} required autoFocus />
-        <input type="password" placeholder="Mot de passe" value={password} onChange={(e)=>setPassword(e.target.value)} style={input} required />
+        <input type="email" placeholder="Email" value={email}
+               onChange={(e) => setEmail(e.target.value)} style={input} required autoFocus />
+        <input type="password" placeholder="Mot de passe" value={password}
+               onChange={(e) => setPassword(e.target.value)} style={input} required />
 
         {err && <div style={{ color: "#b91c1c", fontSize: 14 }}>{err}</div>}
 
