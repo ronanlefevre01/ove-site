@@ -1,6 +1,7 @@
 // src/components/AccountClientPortal.tsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "../config";
 
 /* ===================== Types ===================== */
 type Order = {
@@ -29,8 +30,18 @@ type Product = {
   image_url?: string | null;
 };
 
+type CartItem = {
+  name: string;
+  sku?: string;
+  qty: number;
+  unitPriceCents: number;
+  options?: Record<string, unknown>;
+};
+
+type Tab = "dashboard" | "catalog" | "new" | "orders" | "sav";
+
 /* ===================== Helpers ===================== */
-function getToken() {
+function getToken(): string {
   return (
     localStorage.getItem("OVE_JWT") ||
     sessionStorage.getItem("OVE_JWT") ||
@@ -40,14 +51,21 @@ function getToken() {
   );
 }
 
-async function apiFetch<T>(url: string, opts: RequestInit = {}, base = "/api") {
+async function apiFetch<T>(
+  url: string,
+  opts: RequestInit = {},
+  base = "/api"
+): Promise<T> {
   const token = getToken();
+  const extraHeaders: Record<string, string> =
+    (opts.headers as Record<string, string>) || {};
+
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     Accept: "application/json",
-    ...(opts.headers as Record<string, string>),
+    ...extraHeaders,
   };
-  if (token) headers["Authorization"] = `Bearer ${token}`;
+  if (token) headers.Authorization = `Bearer ${token}`;
 
   const res = await fetch(`${base}${url}`, {
     ...opts,
@@ -55,12 +73,16 @@ async function apiFetch<T>(url: string, opts: RequestInit = {}, base = "/api") {
     credentials: "include",
   });
 
-  // 401 → retour à /login (évite boucle si on y est déjà)
+  // 401 → retour login (évite boucle si déjà dessus)
   if (res.status === 401) {
-    const here = `${window.location.pathname}${window.location.search}`;
+    const here = `${typeof window !== "undefined" ? window.location.pathname : ""}${
+      typeof window !== "undefined" ? window.location.search : ""
+    }`;
     if (!here.startsWith("/login")) {
-      const next = encodeURIComponent(here);
-      window.location.href = `/login?next=${next}`;
+      const next = encodeURIComponent(here || "/");
+      if (typeof window !== "undefined") {
+        window.location.href = `/login?next=${next}`;
+      }
     }
     throw new Error("401 unauthorized");
   }
@@ -78,13 +100,11 @@ function centsToEUR(cents: number) {
 }
 
 /* ===================== Component ===================== */
-
-export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: string }) {
+export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: string }) {
   const navigate = useNavigate();
   const BASE = (apiBase || "/api").replace(/\/$/, ""); // normalisation
 
-  const [activeTab, setActiveTab] =
-    useState<"dashboard" | "catalog" | "new" | "orders" | "sav">("dashboard");
+  const [activeTab, setActiveTab] = useState<Tab>("dashboard");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -98,9 +118,7 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
   const [category, setCategory] = useState<string>("");
 
   // Nouvelle commande (panier)
-  const [items, setItems] = useState(
-    [] as Array<{ name: string; sku?: string; qty: number; unitPriceCents: number; options?: Record<string, any> }>
-  );
+  const [items, setItems] = useState<CartItem[]>([]);
   const [notes, setNotes] = useState("");
   const [shippingCents, setShippingCents] = useState(900);
 
@@ -115,7 +133,7 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
   );
   const total = useMemo(() => subtotal + (shippingCents || 0), [subtotal, shippingCents]);
 
-  // Déconnexion (même base API pour cohérence)
+  // Déconnexion
   async function handleLogout() {
     try {
       await fetch(`${BASE}/auth/logout`, { method: "POST", credentials: "include" });
@@ -144,8 +162,8 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
           setOrders(o.items || []);
           setTickets(t.items || []);
         }
-      } catch (e: any) {
-        if (!cancelled) setError(e?.message || "Erreur de chargement");
+      } catch (e: unknown) {
+        if (!cancelled) setError((e as Error)?.message || "Erreur de chargement");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -169,8 +187,8 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
           BASE
         );
         if (!cancelled) setProducts(resp.items || []);
-      } catch (e: any) {
-        if (!cancelled) setError(e?.message || "Erreur catalogue");
+      } catch (e: unknown) {
+        if (!cancelled) setError((e as Error)?.message || "Erreur catalogue");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -192,8 +210,8 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
       setActiveTab("orders");
       setNotes("");
       setItems([]);
-    } catch (e: any) {
-      setError(e?.message || "Erreur lors de la création de la commande");
+    } catch (e: unknown) {
+      setError((e as Error)?.message || "Erreur lors de la création de la commande");
     } finally {
       setLoading(false);
     }
@@ -211,30 +229,36 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
       setSavSubject("");
       setSavMessage("");
       setSavOrderId(null);
-    } catch (e: any) {
-      setError(e?.message || "Erreur lors de la création du ticket");
+    } catch (e: unknown) {
+      setError((e as Error)?.message || "Erreur lors de la création du ticket");
     } finally {
       setLoading(false);
     }
   }
 
-  // UI helpers (thème vars)
-  const TabButton = ({ id, label }: { id: typeof activeTab; label: string }) => (
-    <button
-      onClick={() => setActiveTab(id)}
-      className={`px-3 py-2 rounded-xl text-sm font-medium mr-2 mb-2 border border-[var(--ove-border)] ${
-        activeTab === id
-          ? "bg-[var(--ove-text)] text-[var(--ove-accent-contrast)]"
-          : "bg-[var(--ove-surface)] text-[var(--ove-text)] hover:bg-[var(--ove-card)]"
-      }`}
-    >
-      {label}
-    </button>
-  );
+  // UI helpers
+  function TabButton({ id, label }: { id: Tab; label: string }) {
+    return (
+      <button
+        onClick={() => setActiveTab(id)}
+        className={`px-3 py-2 rounded-xl text-sm font-medium mr-2 mb-2 border border-[var(--ove-border)] ${
+          activeTab === id
+            ? "bg-[var(--ove-text)] text-[var(--ove-accent-contrast)]"
+            : "bg-[var(--ove-surface)] text-[var(--ove-text)] hover:bg-[var(--ove-card)]"
+        }`}
+      >
+        {label}
+      </button>
+    );
+  }
 
-  const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ className = "", children }) => (
-    <div className={`rounded-2xl p-4 bg-[var(--ove-surface)] border border-[var(--ove-border)] ${className}`}>{children}</div>
-  );
+  function Card({ className = "", children }: React.PropsWithChildren<{ className?: string }>) {
+    return (
+      <div className={`rounded-2xl p-4 bg-[var(--ove-surface)] border border-[var(--ove-border)] ${className}`}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-[70vh] text-[var(--ove-text)]">
@@ -417,7 +441,7 @@ export default function AccountClientPortal({ apiBase = "/api" }: { apiBase?: st
                         onChange={(e) => {
                           const v = e.target.value;
                           const n = [...items];
-                          (n[i] as any).sku = v;
+                          (n[i] as CartItem).sku = v;
                           setItems(n);
                         }}
                         placeholder="Référence"

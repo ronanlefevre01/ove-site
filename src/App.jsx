@@ -1,10 +1,10 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
 import RequireAuth from "./RequireAuth";
+import { API_BASE } from "./config";
 
 export default function App() {
   return (
@@ -16,7 +16,8 @@ export default function App() {
           path="/compte"
           element={
             <RequireAuth>
-              <AccountClientPortal />
+              {/* IMPORTANT: on passe bien la même base API partout */}
+              <AccountClientPortal apiBase={API_BASE} />
             </RequireAuth>
           }
         />
