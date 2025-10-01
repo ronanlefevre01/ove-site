@@ -4,37 +4,60 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
-import { API_BASE } from "./config";
+
+// Base API : même logique que le login (fallback OptiAdmin en prod Vercel)
+const API_BASE =
+  (import.meta.env?.VITE_API_AUTH_BASE?.trim().replace(/\/$/, "")) ||
+  (typeof location !== "undefined" && location.hostname.endsWith("vercel.app")
+    ? "https://opti-admin.vercel.app/api/site-ove"
+    : "/api/site-ove");
 
 function RequireAuth({ children }) {
   const loc = useLocation();
-  const [allowed, setAllowed] = useState(null);
+  const [allowed, setAllowed] = useState(null); // null = chargement
 
   useEffect(() => {
-    let cancel = false;
+    let cancelled = false;
+
+    const token =
+      localStorage.getItem("OVE_JWT") ||
+      sessionStorage.getItem("OVE_JWT") ||
+      localStorage.getItem("ove_jwt") ||
+      sessionStorage.getItem("ove_jwt") ||
+      "";
+
+    // ✅ Fallback optimiste : si on a un token local on laisse entrer,
+    // la vérification /me arrivera en arrière-plan.
+    if (token && !cancelled) setAllowed(true);
+
     (async () => {
       try {
-        const token =
-          localStorage.getItem("OVE_JWT") ||
-          sessionStorage.getItem("OVE_JWT") ||
-          localStorage.getItem("ove_jwt") ||
-          sessionStorage.getItem("ove_jwt") ||
-          "";
-
         const res = await fetch(`${API_BASE}/auth/me`, {
           credentials: "include",
           headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
 
-        if (!cancel) setAllowed(res.ok);
+        if (cancelled) return;
+
+        if (res.ok) {
+          setAllowed(true);
+        } else {
+          // Pas de token ET /me échoue => on bloque
+          if (!token) setAllowed(false);
+          // Sinon (token présent mais /me ko), on laisse allowed tel quel (optimiste)
+        }
       } catch {
-        if (!cancel) setAllowed(false);
+        if (!token && !cancelled) setAllowed(false);
       }
     })();
-    return () => { cancel = true; };
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   if (allowed === null) return <div style={{ padding: 24 }}>Chargement…</div>;
+
   if (!allowed) {
     const next = encodeURIComponent(loc.pathname + loc.search);
     return <Navigate to={`/login?next=${next}`} replace />;
