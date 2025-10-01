@@ -5,7 +5,8 @@ const API_BASE = (import.meta.env && import.meta.env.VITE_API_AUTH_BASE) || "/ap
 
 export default function LoginPage() {
   const [params] = useSearchParams();
-  const next = params.get("next") || "/compte";
+  const rawNext = params.get("next") || "/compte";
+  const next = /^\/[a-zA-Z0-9/_\-?=&.%]*$/.test(rawNext) ? rawNext : "/compte";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +18,6 @@ export default function LoginPage() {
     setBusy(true);
     setErr("");
     try {
-      // 1) LOGIN
       const res = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -33,7 +33,6 @@ export default function LoginPage() {
         throw new Error(data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials"));
       }
 
-      // token fallback (utile en cross-site si le cookie est bloqué en dev)
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
@@ -41,14 +40,18 @@ export default function LoginPage() {
         } catch {}
       }
 
-      // 2) Vérifie la session pour éviter un ping-pong avec RequireAuth
       const me = await fetch(`${API_BASE}/auth/me`, {
         credentials: "include",
         headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
       });
+
+      if (!me.ok && data?.token) {
+        // Cookie refusé ? On passe en bearer et on y va quand même.
+        window.location.assign(next);
+        return;
+      }
       if (!me.ok) throw new Error("session_non_etablie");
 
-      // 3) Redirection (plein rechargement pour garantir l'état)
       window.location.assign(next);
     } catch (e) {
       setErr(String(e?.message || "Erreur de connexion"));
