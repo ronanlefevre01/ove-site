@@ -1,13 +1,20 @@
 // src/components/AccountClientPortal.tsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { API_BASE } from "../config";
+import { API_BASE } from "../lib/apiBase";
 
 /* ===================== Types ===================== */
 type Order = {
   id: string;
   number: string;
-  status: "pending" | "confirmed" | "in_progress" | "shipped" | "delivered" | "cancelled" | string;
+  status:
+    | "pending"
+    | "confirmed"
+    | "in_progress"
+    | "shipped"
+    | "delivered"
+    | "cancelled"
+    | string;
   total_cents: number;
   created_at: string;
 };
@@ -42,13 +49,17 @@ type Tab = "dashboard" | "catalog" | "new" | "orders" | "sav";
 
 /* ===================== Helpers ===================== */
 function getToken(): string {
-  return (
-    localStorage.getItem("OVE_JWT") ||
-    sessionStorage.getItem("OVE_JWT") ||
-    localStorage.getItem("ove_jwt") ||
-    sessionStorage.getItem("ove_jwt") ||
-    ""
-  );
+  try {
+    return (
+      localStorage.getItem("OVE_JWT") ||
+      sessionStorage.getItem("OVE_JWT") ||
+      localStorage.getItem("ove_jwt") ||
+      sessionStorage.getItem("ove_jwt") ||
+      ""
+    );
+  } catch {
+    return "";
+  }
 }
 
 async function apiFetch<T>(
@@ -57,13 +68,10 @@ async function apiFetch<T>(
   base = "/api"
 ): Promise<T> {
   const token = getToken();
-  const extraHeaders: Record<string, string> =
-    (opts.headers as Record<string, string>) || {};
-
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     Accept: "application/json",
-    ...extraHeaders,
+    ...(opts.headers as Record<string, string>),
   };
   if (token) headers.Authorization = `Bearer ${token}`;
 
@@ -73,16 +81,13 @@ async function apiFetch<T>(
     credentials: "include",
   });
 
-  // 401 → retour login (évite boucle si déjà dessus)
   if (res.status === 401) {
-    const here = `${typeof window !== "undefined" ? window.location.pathname : ""}${
-      typeof window !== "undefined" ? window.location.search : ""
-    }`;
-    if (!here.startsWith("/login")) {
+    const here =
+      (typeof window !== "undefined" ? window.location.pathname : "") +
+      (typeof window !== "undefined" ? window.location.search : "");
+    if (!here.startsWith("/login") && typeof window !== "undefined") {
       const next = encodeURIComponent(here || "/");
-      if (typeof window !== "undefined") {
-        window.location.href = `/login?next=${next}`;
-      }
+      window.location.href = `/login?next=${next}`;
     }
     throw new Error("401 unauthorized");
   }
@@ -92,17 +97,30 @@ async function apiFetch<T>(
     throw new Error(`${res.status} ${res.statusText} - ${detail}`);
   }
 
+  // 204 ?
+  if (res.status === 204) return undefined as unknown as T;
+
   return (await res.json()) as T;
 }
 
 function centsToEUR(cents: number) {
-  return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format((cents || 0) / 100);
+  return new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  }).format((cents || 0) / 100);
 }
 
 /* ===================== Component ===================== */
-export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: string }) {
+export default function AccountClientPortal({
+  apiBase = API_BASE,
+}: {
+  apiBase?: string;
+}) {
   const navigate = useNavigate();
-  const BASE = (apiBase || "/api").replace(/\/$/, ""); // normalisation
+  const BASE = useMemo(
+    () => (apiBase || "/api").replace(/\/$/, ""),
+    [apiBase]
+  );
 
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
   const [loading, setLoading] = useState(false);
@@ -155,15 +173,24 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
         setLoading(true);
         setError(null);
         const [o, t] = await Promise.all([
-          apiFetch<{ page: number; pageSize: number; items: Order[] }>("/orders", {}, BASE),
-          apiFetch<{ page: number; pageSize: number; total: number; items: Ticket[] }>("/tickets", {}, BASE),
+          apiFetch<{ page: number; pageSize: number; items: Order[] }>(
+            "/orders",
+            {},
+            BASE
+          ),
+          apiFetch<{
+            page: number;
+            pageSize: number;
+            total: number;
+            items: Ticket[];
+          }>("/tickets", {}, BASE),
         ]);
         if (!cancelled) {
           setOrders(o.items || []);
           setTickets(t.items || []);
         }
-      } catch (e: unknown) {
-        if (!cancelled) setError((e as Error)?.message || "Erreur de chargement");
+      } catch (e: any) {
+        if (!cancelled) setError(e?.message || "Erreur de chargement");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -180,15 +207,18 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
     (async () => {
       try {
         setLoading(true);
-        const url = `/products?q=${encodeURIComponent(q)}&category=${encodeURIComponent(category)}`;
-        const resp = await apiFetch<{ page: number; pageSize: number; total: number; items: Product[] }>(
-          url,
-          {},
-          BASE
-        );
+        const url = `/products?q=${encodeURIComponent(q)}&category=${encodeURIComponent(
+          category
+        )}`;
+        const resp = await apiFetch<{
+          page: number;
+          pageSize: number;
+          total: number;
+          items: Product[];
+        }>(url, {}, BASE);
         if (!cancelled) setProducts(resp.items || []);
-      } catch (e: unknown) {
-        if (!cancelled) setError((e as Error)?.message || "Erreur catalogue");
+      } catch (e: any) {
+        if (!cancelled) setError(e?.message || "Erreur catalogue");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -204,14 +234,22 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
       setLoading(true);
       setError(null);
       const body = { items, notes, shippingCents };
-      await apiFetch("/orders", { method: "POST", body: JSON.stringify(body) }, BASE);
-      const o = await apiFetch<{ page: number; pageSize: number; items: Order[] }>("/orders", {}, BASE);
+      await apiFetch<unknown>(
+        "/orders",
+        { method: "POST", body: JSON.stringify(body) },
+        BASE
+      );
+      const o = await apiFetch<{ page: number; pageSize: number; items: Order[] }>(
+        "/orders",
+        {},
+        BASE
+      );
       setOrders(o.items || []);
       setActiveTab("orders");
       setNotes("");
       setItems([]);
-    } catch (e: unknown) {
-      setError((e as Error)?.message || "Erreur lors de la création de la commande");
+    } catch (e: any) {
+      setError(e?.message || "Erreur lors de la création de la commande");
     } finally {
       setLoading(false);
     }
@@ -222,15 +260,23 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
       setLoading(true);
       setError(null);
       const body = { orderId: savOrderId || undefined, subject: savSubject, message: savMessage };
-      await apiFetch("/tickets", { method: "POST", body: JSON.stringify(body) }, BASE);
-      const t = await apiFetch<{ page: number; pageSize: number; items: Ticket[] }>("/tickets", {}, BASE);
+      await apiFetch<unknown>(
+        "/tickets",
+        { method: "POST", body: JSON.stringify(body) },
+        BASE
+      );
+      const t = await apiFetch<{ page: number; pageSize: number; items: Ticket[] }>(
+        "/tickets",
+        {},
+        BASE
+      );
       setTickets(t.items || []);
       setActiveTab("sav");
       setSavSubject("");
       setSavMessage("");
       setSavOrderId(null);
-    } catch (e: unknown) {
-      setError((e as Error)?.message || "Erreur lors de la création du ticket");
+    } catch (e: any) {
+      setError(e?.message || "Erreur lors de la création du ticket");
     } finally {
       setLoading(false);
     }
@@ -252,13 +298,14 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
     );
   }
 
-  function Card({ className = "", children }: React.PropsWithChildren<{ className?: string }>) {
-    return (
-      <div className={`rounded-2xl p-4 bg-[var(--ove-surface)] border border-[var(--ove-border)] ${className}`}>
-        {children}
-      </div>
-    );
-  }
+  const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
+    className = "",
+    children,
+  }) => (
+    <div className={`rounded-2xl p-4 bg-[var(--ove-surface)] border border-[var(--ove-border)] ${className}`}>
+      {children}
+    </div>
+  );
 
   return (
     <div className="min-h-[70vh] text-[var(--ove-text)]">
@@ -389,7 +436,12 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
                             }
                             return [
                               ...old,
-                              { name: p.name, sku: p.sku || undefined, qty: 1, unitPriceCents: p.price_cents },
+                              {
+                                name: p.name,
+                                sku: p.sku || undefined,
+                                qty: 1,
+                                unitPriceCents: p.price_cents,
+                              },
                             ];
                           })
                         }
@@ -400,7 +452,11 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
                   </div>
                 </div>
               ))}
-              {products.length === 0 && <div className="col-span-full opacity-80">Aucun produit pour ces critères.</div>}
+              {products.length === 0 && (
+                <div className="col-span-full opacity-80">
+                  Aucun produit pour ces critères.
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -419,7 +475,9 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
                 </button>
               </div>
               {items.length === 0 ? (
-                <div className="opacity-80 mt-2">Aucun article. Ajoute des produits depuis l’onglet Catalogue.</div>
+                <div className="opacity-80 mt-2">
+                  Aucun article. Ajoute des produits depuis l’onglet Catalogue.
+                </div>
               ) : (
                 <div className="mt-3">
                   {items.map((it, i) => (
@@ -485,12 +543,16 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Card>
-                <label className="block text-sm mb-1 opacity-80">Frais de port (cents)</label>
+                <label className="block text-sm mb-1 opacity-80">
+                  Frais de port (cents)
+                </label>
                 <input
                   type="number"
                   className="w-full px-3 py-2 rounded-lg bg-[var(--ove-text)] text-[var(--ove-accent-contrast)]"
                   value={shippingCents}
-                  onChange={(e) => setShippingCents(parseInt(e.target.value || "0", 10))}
+                  onChange={(e) =>
+                    setShippingCents(parseInt(e.target.value || "0", 10))
+                  }
                 />
               </Card>
               <Card>
@@ -555,7 +617,9 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
                           <td className="py-2 pr-4 font-medium">{o.number}</td>
                           <td className="py-2 pr-4">{new Date(o.created_at).toLocaleString()}</td>
                           <td className="py-2 pr-4">
-                            <span className="px-2 py-1 rounded-lg bg-[var(--ove-card)]">{o.status}</span>
+                            <span className="px-2 py-1 rounded-lg bg-[var(--ove-card)]">
+                              {o.status}
+                            </span>
                           </td>
                           <td className="py-2 pr-4">{centsToEUR(o.total_cents)}</td>
                         </tr>
@@ -637,7 +701,9 @@ export default function AccountClientPortal({ apiBase = API_BASE }: { apiBase?: 
                         <tr key={t.id} className="border-t border-[var(--ove-border)]">
                           <td className="py-2 pr-4">{t.subject}</td>
                           <td className="py-2 pr-4">
-                            <span className="px-2 py-1 rounded-lg bg-[var(--ove-card)]">{t.status}</span>
+                            <span className="px-2 py-1 rounded-lg bg-[var(--ove-card)]">
+                              {t.status}
+                            </span>
                           </td>
                           <td className="py-2 pr-4">{new Date(t.created_at).toLocaleString()}</td>
                         </tr>
