@@ -1,11 +1,11 @@
-// src/App.jsx
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import OVELanding from "./OVELanding";
 import LoginPage from "./pages/login";
 import AccountClientPortal from "./components/AccountClientPortal";
+import { getApiBase, getStoredToken } from "./config";  // <-- NEW
 
-const API_BASE = (import.meta.env && import.meta.env.VITE_API_AUTH_BASE) || "/api/site-ove";
+const API_BASE = getApiBase();                           // <-- NEW
 
 function RequireAuth({ children }) {
   const loc = useLocation();
@@ -15,16 +15,10 @@ function RequireAuth({ children }) {
     let cancel = false;
     (async () => {
       try {
-        const token =
-          localStorage.getItem("OVE_JWT") ||
-          sessionStorage.getItem("OVE_JWT") ||
-          localStorage.getItem("ove_jwt") ||
-          sessionStorage.getItem("ove_jwt") ||
-          "";
-
+        const token = getStoredToken();                 // <-- token fallback
         const res = await fetch(`${API_BASE}/auth/me`, {
           credentials: "include",
-          headers: token ? { Authorization: `Bearer ${token}` } : {},
+          headers: token ? { Authorization: `Bearer ${token}` } : undefined,
         });
         if (!cancel) setAllowed(res.ok);
       } catch {

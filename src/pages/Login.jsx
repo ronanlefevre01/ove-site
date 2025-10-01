@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const API_BASE = (import.meta.env && import.meta.env.VITE_API_AUTH_BASE) || "/api/site-ove";
+/** Base API fiable :
+ * - si VITE_API_AUTH_BASE est défini, on l'utilise
+ * - sinon, si on est en prod Vercel, fallback vers opti-admin.vercel.app
+ * - sinon (local), on garde le proxy /api/site-ove
+ */
+const API_BASE =
+  (import.meta.env?.VITE_API_AUTH_BASE?.trim().replace(/\/$/, "")) ||
+  (typeof location !== "undefined" && location.hostname.endsWith("vercel.app")
+    ? "https://opti-admin.vercel.app/api/site-ove"
+    : "/api/site-ove");
 
 export default function LoginPage() {
   const [params] = useSearchParams();
+
+  // next ne doit être qu’un chemin relatif sûr
   const rawNext = params.get("next") || "/compte";
   const next = /^\/[a-zA-Z0-9/_\-?=&.%]*$/.test(rawNext) ? rawNext : "/compte";
 
@@ -15,9 +26,12 @@ export default function LoginPage() {
 
   async function submit(e) {
     e.preventDefault();
+    if (busy) return;
     setBusy(true);
     setErr("");
+
     try {
+      // 1) LOGIN
       const res = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -30,9 +44,12 @@ export default function LoginPage() {
       try { data = raw ? JSON.parse(raw) : {}; } catch {}
 
       if (!res.ok) {
-        throw new Error(data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials"));
+        throw new Error(
+          data?.error || (res.status === 404 ? "endpoint_introuvable" : "invalid_credentials")
+        );
       }
 
+      // token fallback (utile en cross-site si le cookie HttpOnly est ignoré)
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
@@ -40,18 +57,20 @@ export default function LoginPage() {
         } catch {}
       }
 
+      // 2) Vérifie la session pour éviter le ping-pong avec RequireAuth
       const me = await fetch(`${API_BASE}/auth/me`, {
         credentials: "include",
         headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
       });
 
+      // Si le cookie est refusé mais qu’on a un token, on tente quand même la redirection.
       if (!me.ok && data?.token) {
-        // Cookie refusé ? On passe en bearer et on y va quand même.
         window.location.assign(next);
         return;
       }
       if (!me.ok) throw new Error("session_non_etablie");
 
+      // 3) Redirection "hard" (garantit l’état)
       window.location.assign(next);
     } catch (e) {
       setErr(String(e?.message || "Erreur de connexion"));
