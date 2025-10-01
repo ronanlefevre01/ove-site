@@ -14,9 +14,11 @@
     <meta name="color-scheme" content="dark light" />
 
     <title>OVE Distribution — B2B pour opticiens</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-    <!-- Polices (comme dans l’aperçu Canvas) -->
+    <!-- Favicon inline pour éviter tout 404 sur /favicon.ico ou /vite.svg -->
+    <link rel="icon" href="data:," />
+
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,11 +28,11 @@
 
     <style>
       :root {
-        /* Police UI par défaut (Inter) ; on a Plus Jakarta Sans dispo si tu veux l'utiliser pour certains titres */
         --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
       }
       body {
         font-family: var(--font-ui);
+        margin: 0;
       }
     </style>
   </head>
