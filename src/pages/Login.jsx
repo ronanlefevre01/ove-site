@@ -1,16 +1,7 @@
+// src/pages/login.jsx
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
-/** Base API fiable :
- * - si VITE_API_AUTH_BASE est défini, on l'utilise
- * - sinon, si on est en prod Vercel, fallback vers opti-admin.vercel.app
- * - sinon (local), on garde le proxy /api/site-ove
- */
-const API_BASE =
-  (import.meta.env?.VITE_API_AUTH_BASE?.trim().replace(/\/$/, "")) ||
-  (typeof location !== "undefined" && location.hostname.endsWith("vercel.app")
-    ? "https://opti-admin.vercel.app/api/site-ove"
-    : "/api/site-ove");
+import { API_BASE } from "../config"; // <<— une seule source de vérité
 
 export default function LoginPage() {
   const [params] = useSearchParams();
@@ -49,7 +40,7 @@ export default function LoginPage() {
         );
       }
 
-      // token fallback (utile en cross-site si le cookie HttpOnly est ignoré)
+      // Fallback cross-site : on garde aussi le token côté client
       if (data?.token) {
         try {
           localStorage.setItem("OVE_JWT", data.token);
@@ -57,20 +48,20 @@ export default function LoginPage() {
         } catch {}
       }
 
-      // 2) Vérifie la session pour éviter le ping-pong avec RequireAuth
+      // 2) Vérifie la session pour éviter un ping-pong avec RequireAuth
       const me = await fetch(`${API_BASE}/auth/me`, {
         credentials: "include",
         headers: data?.token ? { Authorization: `Bearer ${data.token}` } : undefined,
       });
 
-      // Si le cookie est refusé mais qu’on a un token, on tente quand même la redirection.
+      // Cookie ignoré ? On a un bearer => on force quand même la redirection
       if (!me.ok && data?.token) {
         window.location.assign(next);
         return;
       }
       if (!me.ok) throw new Error("session_non_etablie");
 
-      // 3) Redirection "hard" (garantit l’état)
+      // 3) Redirection "hard" (garantit l’état du SPA côté /compte)
       window.location.assign(next);
     } catch (e) {
       setErr(String(e?.message || "Erreur de connexion"));
